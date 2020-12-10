@@ -1,7 +1,6 @@
 
 import flask
 
-# import forms
 import models
 import controllers
 from helper import get_modules, string_encrypt, string_decrypt, get_id, put_id

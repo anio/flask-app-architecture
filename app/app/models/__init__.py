@@ -64,7 +64,6 @@ def stringFromList(string_list):
     return StringFromList
 
 
-
 def BooleanValue(true_value=None, false_value=None, return_orig_value=False):
 
     class BooleanValueClass(types.TypeDecorator):

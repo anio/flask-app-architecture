@@ -35,6 +35,7 @@ models.db.create_all()
 
 flask.app = app
 
+
 @app.after_request
 def per_request_callbacks(response):
     path = request.path

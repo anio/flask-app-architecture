@@ -4,7 +4,7 @@ methods = ['GET']
 policy = ['authorized']
 
 
-def app(_, *args, **kwargs):
+def app(_, form, querystring, *args, **kwargs):
 
     if 'user' in _.session:
         _.session.pop('user')

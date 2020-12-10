@@ -10,7 +10,6 @@ logging.basicConfig(
     )
 )
 
-debug = True
 port = 8080
 
 views = 'app/views'

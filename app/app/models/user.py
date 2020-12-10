@@ -7,20 +7,18 @@ from helper import get_current
 from models import db, CRUD, SaltedValue
 
 
-name = StringField(u'Name', [validators.InputRequired(),
-                            validators.Length(min=3, max=32)],
-                   render_kw={'placeholder': u'Name'}
-                   )
-username = StringField(u'Username', [validators.InputRequired(),
-                                       validators.Length(min=3, max=32)],
-
-                   render_kw={'placeholder': u'Username'}
-                       )
-password = PasswordField(u'Passowrd', [validators.InputRequired(),
-                                        validators.Length(min=8, max=128)],
-
-                   render_kw={'placeholder': u'Password'}
-                         )
+name = StringField(u'Name',
+                   [validators.InputRequired(),
+                    validators.Length(min=3, max=32)],
+                   render_kw={'placeholder': u'Name'})
+username = StringField(u'Username',
+                       [validators.InputRequired(),
+                        validators.Length(min=3, max=32)],
+                       render_kw={'placeholder': u'Username'})
+password = PasswordField(u'Passowrd',
+                         [validators.InputRequired(),
+                          validators.Length(min=8, max=128)],
+                         render_kw={'placeholder': u'Password'})
 
 
 class User(db.Model, CRUD):
