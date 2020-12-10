@@ -1,5 +1,5 @@
 
-# A Better Architecure For Flask-based Application
+# A Better Architecture For Flask-based Application
 
 This is a Flask application with a better approach and design, and more pythonic code style.
 You can use it as a boilerplate code, but it's just a proof-of-concept code.
