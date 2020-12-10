@@ -1,0 +1,11 @@
+__pycache__
+*.pyc
+*.swp
+*.swo
+*.swn
+*~
+venv
+env
+migrations
+key
+app.db
