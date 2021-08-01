@@ -1,7 +1,7 @@
 
-# A Better Architecture For Flask-based Application
+# A Different Architecture For Flask-based Application
 
-This is a Flask application with a better approach and design, and more pythonic code style.
+This is a Flask application with a different approach and design, and also different code style.
 You can use it as a boilerplate code, but it's just a proof-of-concept code.
 
 ## Easy to write controllers
