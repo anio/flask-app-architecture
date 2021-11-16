@@ -83,9 +83,9 @@ def string_decrypt(data):
     return f.decrypt(bytes(data, encoding='utf-8'))
 
 
-def get_id(_):
-    return int(_.string_decrypt(_.request.args.get('id')))
+def get_id(flask):
+    return int(flask.string_decrypt(flask.request.args.get('id')))
 
 
-def put_id(_, _id):
-    return _.string_encrypt(str(_id))
+def put_id(flask, _id):
+    return flask.string_encrypt(str(_id))

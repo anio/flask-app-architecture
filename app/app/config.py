@@ -11,7 +11,7 @@ def init(app):
     @app.context_processor
     def inject_to_templates():
         return dict(
-            _=flask,
+            flask=flask,
             session=flask.session,
             user=flask.session.get('user', None),
             helper=helper,

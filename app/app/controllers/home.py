@@ -3,10 +3,10 @@ methods = ['GET']
 policy = []
 
 
-def app(_, method, form, querystring):
+def app(flask, method, form, querystring):
 
-    if 'user' in _.session:
+    if 'user' in flask.session:
         view_name = 'home.html'
     else:
         view_name = 'anon_home.html'
-    return _.render_template(view_name, title="Home")
+    return flask.render_template(view_name, title="Home")

@@ -26,7 +26,7 @@ def activate(policy):
                     if 'user' in flask.session:
                         return flask.redirect(flask.url_for('home'))
 
-            return f(_=flask,
+            return f(flask=flask,
                      method=flask.request.method,
                      form=flask.request.form,
                      querystring=flask.request.args,

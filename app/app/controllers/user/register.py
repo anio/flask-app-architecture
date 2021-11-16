@@ -3,24 +3,24 @@ methods = ['POST', 'GET']
 policy = ['not_authorized']
 
 
-def app(_, method, form, querystring, *args, **kwargs):
+def app(flask, method, form, querystring, *args, **kwargs):
 
-    _form = _.Form_Register(form)
+    _form = flask.Form_Register(form)
 
     if method == 'GET' or not _form.validate_on_submit():
         for error in _form.errors.items():
             print(error)
-        return _.render_template('register.html', form=_form)
+        return flask.render_template('register.html', form=_form)
 
-    if _.User.query.filter_by(username=form.get('username')).first():
+    if flask.User.query.filter_by(username=form.get('username')).first():
         return 'username exists'
 
-    user = _.User.create_by_form(
+    user = flask.User.create_by_form(
         form,
-        _.User.name,
-        _.User.username,
-        _.User.password
+        flask.User.name,
+        flask.User.username,
+        flask.User.password
     )
 
     user.save()
-    return _.redirect(_.url_for('login_user'))
+    return flask.redirect(flask.url_for('login_user'))

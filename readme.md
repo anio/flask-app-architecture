@@ -14,7 +14,7 @@ Just add your controller to the `controllers` directory and define:
 * access control `policy`
 
 and use:
-* `_.ModelName`, `_.string_encrypt`, `_.string_decrypt`
+* `flask.ModelName`, `flask.string_encrypt`, `flask.string_decrypt`
 * `form` instead of `from flask import request` and `request.from`
 * `querystring` instead of `request.args`
 
@@ -24,24 +24,24 @@ methods = ['POST', 'GET']
 policy = ['not_authorized']
 
 
-def app(_, method, form, querystring, *args, **kwargs):
+def app(flask, method, form, querystring, *args, **kwargs):
 
-    _form = _.Form_Register(form)
+    _form = flask.Form_Register(form)
 
     if method == 'GET' or not _form.validate_on_submit():
         for error in _form.errors.items():
             print(error)
-        return _.render_template('register.html', form=_form)
+        return flask.render_template('register.html', form=_form)
 
-    user = _.User.create_by_form(
+    user = flask.User.create_by_form(
         form,
-        _.User.name,
-        _.User.username,
-        _.User.password
+        flask.User.name,
+        flask.User.username,
+        flask.User.password
     )
 
     user.save()
-    return _.redirect(_.url_for('login_user'))
+    return flask.redirect(flask.url_for('login_user'))
 ```
 
 [Read the routes code](app/app/routes.py)
