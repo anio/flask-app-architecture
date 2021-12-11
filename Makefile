@@ -28,7 +28,7 @@ run:
 	@FLASK_ENV=development python -m flask run -p 8080
 
 production:
-	@echo Starting in development ENV...
+	@echo Starting in production ENV...
 	@source venv/bin/activate
 	@cd app
 	@uwsgi --http 127.0.0.1:8080 --wsgi-file main.py --callable app -L
